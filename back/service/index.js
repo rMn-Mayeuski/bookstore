@@ -6,7 +6,7 @@ const fs = require('fs');
 const cors = require('cors');
 const jsonParser = express.json();
 
-const bookRouter = require('./routes/bookRouter');
+const bookRouter = require('./modules/book/routes/bookRouter');
 
 let corsOptions = {
     origin: 'http://localhost:3000',

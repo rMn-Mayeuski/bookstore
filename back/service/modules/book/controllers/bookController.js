@@ -1,4 +1,4 @@
-const Book = require('../models/book/book');
+const Book = require('../model/book');
 
 exports.getBooks = function(request, response){
     Book.find({},{_id:0, __v:0}, function(error, data){
