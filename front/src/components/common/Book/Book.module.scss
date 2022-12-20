@@ -1,0 +1,47 @@
+.bookContent{
+    max-width: 352px;
+    &Top{
+        display: flex;
+        justify-content: center;
+        background-color: #F4EEFD;
+    }
+    &Text{
+        & h2{
+            font-family: 'Raleway', sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 32px;
+            color: #313037;
+        }
+        & p{
+            font-family: 'Raleway', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: #A8A8A8;
+        }
+    }
+    &Bottom{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &Price{
+            font-family: 'Raleway', sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 32px;
+            color: #313037;
+        }
+        &Rating{
+            color: rebeccapurple;
+            font-family: 'Raleway', sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 32px;
+        }
+    }
+}
