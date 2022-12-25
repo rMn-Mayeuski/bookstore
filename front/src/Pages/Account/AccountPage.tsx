@@ -1,10 +1,11 @@
 import React, { FC } from 'react';
 import { PageProps } from '../../components/AppRoutes/Routes';
+import Title from '../../components/common/Title/Title';
 
 const AccountPage: FC<PageProps> = ({title}) => {
     return (
         <div>
-            <p>{title}</p>
+            <Title title={title}/>
         </div>
     );
 };
