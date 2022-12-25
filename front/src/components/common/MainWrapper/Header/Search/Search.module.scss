@@ -22,8 +22,8 @@
             color: #A8A8A8;
         }
         &:focus{
-            border: 2px solid #E7E7E7;
-            outline: none;
+            border: 1px solid #E7E7E7;
+            outline: 2px solid #E7E7E7;
             transition: 0.3s;
         }
     }

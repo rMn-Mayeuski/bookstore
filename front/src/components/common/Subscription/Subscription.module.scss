@@ -1,0 +1,65 @@
+.subscriptionConteiner{
+    background-color: #F4EEFD;
+    padding: 56px 64px;
+    margin: 72px 0;
+    &Form{
+        height: 56px;
+        display: flex;
+    }
+    & h2{
+        font-family: 'Raleway', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 60px;
+        color: #313037;
+    }
+    & p{
+        font-family: 'Raleway', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 28px;
+        color: #A8A8A8;
+    }
+    & input{
+        outline: none;
+        width: 100%;
+        height: 100%;
+        border: none;
+        padding: 0 20px;
+        font-family: 'Raleway', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 32px;
+        color: #A8A8A8;
+        transition: 0.3s;
+        &::placeholder{
+            font-family: 'Raleway', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 32px;
+            color: #A8A8A8;
+        }
+        // &:focus{
+        //     border: 1px solid #E7E7E7;
+        //     outline: 2px solid #E7E7E7;
+        //     transition: 0.3s;
+        // }
+    }
+    & button{
+        padding: 16px 40px;
+        height: 100%;
+        background: #313037;
+        border: none;
+        font-family: 'Raleway', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 24px;
+        color: #FFFFFF;
+        cursor: pointer;
+    }
+}

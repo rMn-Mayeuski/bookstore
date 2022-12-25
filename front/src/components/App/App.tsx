@@ -4,6 +4,7 @@ import Book from '../common/Book/Book';
 import MainWrapper from '../common/MainWrapper/MainWrapper';
 
 const App: FC = () => {
+  
   return (
     <MainWrapper>
       <AppRouter/>

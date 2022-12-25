@@ -1,11 +1,14 @@
 import React, { FC } from 'react';
 import { PageProps } from '../../components/AppRoutes/Routes';
+import Subscription from '../../components/common/Subscription/Subscription';
+import Title from '../../components/common/Title/Title';
 
 const MainPage: FC<PageProps> = ({title}) => {
     return (
-        <div>
-            <p>{title}</p>
-        </div>
+        <>
+            <Title title={title}/>
+            <Subscription/>
+        </>
     );
 };
 
