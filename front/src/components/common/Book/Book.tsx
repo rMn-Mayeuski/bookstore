@@ -1,27 +1,34 @@
 import React, { FC } from 'react';
-import book from "../../../assets/book.png"
+import notFound from "../../../assets/book.png"
+import { IBook } from '../BookList/BookList';
 import styles from "./Book.module.scss"
 
-const Book: FC = () => {
+interface IBookProps {
+    book: IBook
+    index?: number
+    onClick?: () => void
+}
+
+const Book: FC<IBookProps> = ({book}) => {
     return (
         <div className={styles.bookContent}>
             <div className={styles.bookContentTop}>
-                <img src={book} alt="book" />
+                <img src={book?.bookImg ? book?.bookImg : notFound} alt="book" />
             </div>
             <div className={styles.bookContentText}>
                 <h2>
-                    Mastering ROS for Robotics Programming 
+                    {book?.bookName}
                 </h2>
                 <p>
-                    by Lentin Joseph,  Apress 2018
+                    {book?.author}
                 </p>
             </div>
             <div className={styles.bookContentBottom}>
                 <p className={styles.bookContentBottomPrice}>
-                    $31.38 
+                    {book?.price}
                 </p>
                 <p className={styles.bookContentBottomRating}>
-                    Rating:4
+                    {book?.stars}
                 </p>
             </div>
         </div>
