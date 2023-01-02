@@ -13,12 +13,10 @@ const MainPage: FC<PageProps> = ({title}) => {
 
         const docs  = await BookService.getBooks();
 
-        const books = await docs;
-
         //@ts-ignore
-        setBooks(books)
+        setBooks(docs)
 
-        console.log(books);
+        console.log(docs);
     }
 
     useEffect(() => {
