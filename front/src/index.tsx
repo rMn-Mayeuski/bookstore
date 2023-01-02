@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from './components/App/App';
+import { BurgerMenuProvider } from './provider/BurgerMenuProvider';
+import { ScreenWidthProvider } from './provider/ScreenWidthProvider';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -9,7 +11,11 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <BurgerMenuProvider>
+        <ScreenWidthProvider>
+          <App />
+        </ScreenWidthProvider>
+      </BurgerMenuProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
