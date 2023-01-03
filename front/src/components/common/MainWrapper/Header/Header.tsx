@@ -15,7 +15,7 @@ const Header: FC = () => {
     return (
         <header className={styles.headerContainer}>
             <img src={logo} alt="logo" />
-            {screenWidth > 977 ? <Search/> : ""}
+            {screenWidth > 977 ? <Search width='542px'/> : ""}
             <div className={styles.headerContainerLeft}>
                 {screenWidth > 977 ? <Favorites/> : ""}
                 <Cart/>

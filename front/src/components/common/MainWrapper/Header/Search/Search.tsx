@@ -2,10 +2,17 @@ import React, { FC } from 'react';
 import search from "../../../../../assets/search.svg"
 import styles from "./Search.module.scss"
 
-const Search: FC = () => {
+interface ISearch {
+    width: string
+}
+
+const Search: FC<ISearch> = ({width}) => {
     return (
-        <form className={styles.headerSearch}>
-            <input 
+        <form 
+            className={styles.headerSearch} 
+        >
+            <input
+                style={{width}} 
                 type="text"
                 placeholder='Search'
             />

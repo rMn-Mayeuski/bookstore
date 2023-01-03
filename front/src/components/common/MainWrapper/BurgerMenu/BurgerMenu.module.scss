@@ -6,11 +6,22 @@
         position: absolute;
         top: 0px;
         right: 0px;
+        padding: 56px 40px;
         background: #FFFFFF;
-        height: 100%;
-        width: 368px;
+        height: calc(100% - 112px);
+        width: 288px;
         // @media (min-width: 957px) {
         //     display: none;
         // }
+    }
+    &Content{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-top: 1px solid #E7E7E7;
+        width: 288px;
+        height: 100%;
+        margin-top: 30px;
+        padding-top: 56px;
     }
 }
