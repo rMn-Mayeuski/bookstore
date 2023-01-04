@@ -12,7 +12,8 @@ export const BurgerMenuProvider = ({ children, ...props}: IWithChildren) => {
     }
     const handleClickAway: MouseEventHandler = (event) => {
         if (event.target === event.currentTarget) {
-            burgerMenuActive()
+            setOpen(prevState => !prevState);
+            // burgerMenuActive()
         }
     }
 

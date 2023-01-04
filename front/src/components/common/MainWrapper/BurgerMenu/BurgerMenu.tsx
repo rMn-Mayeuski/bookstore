@@ -1,5 +1,7 @@
 import React, { FC } from 'react';
+import { useMenu } from '../../../../provider/BurgerMenuProvider';
 import { IBurgerMenuCondition } from '../../../../types/types';
+import BurgerBTN from '../Header/BurgerBTN/BurgerBTN';
 import Search from '../Header/Search/Search';
 import styles from "./BurgerMenu.module.scss"
 import MenuBTN from './MenuBTN/MenuBTN';
@@ -9,19 +11,25 @@ const BurgerMenu: FC<IBurgerMenuCondition> = ({
     handleClickAway,
 }
 ) => {
+    const menu = useMenu()
 
-    const handlerStylesBurgerMenu = menuActive ? styles.burgerMenuActive : styles.burgerMenu;
+    const handlerStylesBurgerMenu = menu.open ? styles.burgerMenuActive : styles.burgerMenu;
+
+    const handlerStylesBurgerMenuBackground = menu.open ? styles.burgerMenuBackgroundActive : "";
 
     return (
-        <div 
+        <div className={handlerStylesBurgerMenuBackground} onClick={handleClickAway}>
+            <div 
             className={handlerStylesBurgerMenu}
-            onClick={handleClickAway}
         >
-            <div className={styles.burgerMenuContent}>
-                <Search width='246px'/>
-                <MenuBTN title='sign in'/>
+            <BurgerBTN/>
+                <div className={styles.burgerMenuContent}>
+                    <Search width='246px'/>
+                    <MenuBTN title='sign in'/>
+                </div>
             </div>
         </div>
+        
     );
 };
 

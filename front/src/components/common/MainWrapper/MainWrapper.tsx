@@ -13,9 +13,11 @@ const MainWrapper: FC<IWithChildren> = ({children}) => {
 
     const menu = useMenu()
 
+    const menuOpen = menu.open ? styles.wrapperMenuOpen : styles.wrapper;
+
     return (
         <>
-            <div className={styles.wrapper}>
+            <div className={menuOpen}>
                 <Header/>
                 {children}
                 <Footer/>
