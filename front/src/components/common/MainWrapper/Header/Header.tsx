@@ -7,6 +7,7 @@ import Cart from './Cart/Cart';
 import User from './User/User';
 import { useScreenWidth } from '../../../../provider/ScreenWidthProvider';
 import BurgerBTN from './BurgerBTN/BurgerBTN';
+import { Link, NavLink } from 'react-router-dom';
 
 const Header: FC = () => {
 
@@ -14,7 +15,9 @@ const Header: FC = () => {
 
     return (
         <header className={styles.headerContainer}>
-            <img src={logo} alt="logo" />
+            <NavLink to={"/home"} className={styles.headerContainerLogo}>
+                <img src={logo} alt="logo" />
+            </NavLink>
             {screenWidth > 977 ? <Search width='542px'/> : ""}
             <div className={styles.headerContainerLeft}>
                 {screenWidth > 977 ? <Favorites/> : ""}
