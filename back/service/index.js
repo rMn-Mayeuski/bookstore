@@ -6,7 +6,6 @@ const uri = 'mongodb+srv://ABChishevich:p7VzV7jCTw0fqlAv@cluster0.qiit4v7.mongod
 
 const fs = require('fs');
 const cors = require('cors');
-const jsonParser = express.json();
 
 const bookRouter = require('./modules/book/routes/bookRouter');
 
@@ -16,6 +15,9 @@ let corsOptions = {
 }
 
 app.use(cors(corsOptions));
+app.use(express.json())
+
+
 app.use('/book', bookRouter);
 
 app.use(function(request, response, next){
