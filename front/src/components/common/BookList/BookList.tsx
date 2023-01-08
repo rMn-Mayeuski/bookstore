@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import Book from '../Book/Book';
+import styles from "./BookList.module.scss"
 
 export interface IBook{
     id?: number
@@ -16,7 +17,7 @@ interface IBookListProps {
 
 const BookList: FC<IBookListProps> = ({books = []}) => {
     return (
-        <div>
+        <div className={styles.bookListWrappper}>
             {books.map((book, index) => {
                 return (
                     <Book
