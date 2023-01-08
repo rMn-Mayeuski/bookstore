@@ -26,8 +26,8 @@ export interface IRoute extends RouteObject{
 
 export enum Routes {
     main = "/home",
+    book = "/book/:id",
     account = "/account",
-    book = "/book",
     cart = "/cart",
     favorites = "/favorites",
     search = "/search",
