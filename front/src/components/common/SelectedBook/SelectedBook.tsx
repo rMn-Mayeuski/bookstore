@@ -8,9 +8,22 @@ interface SelectedBookProps {
 
 const SelectedBook: FC<SelectedBookProps> = ({book}) => {
     return (
-        <div>
-            {book.bookName}
-        </div>
+        <section className={styles.bookConteiner}>
+            <h1 className={styles.bookConteinerTitle}>
+                {book.bookName}
+            </h1>
+            <div className={styles.bookConteinerTop}>
+                <div className={styles.bookConteinerTopLeft}>
+                    <img src={book.bookImg} alt="Book cover" />
+                </div>
+                <div className={styles.bookConteinerTopRight}>
+                    <div className={styles.bookConteinerTopRightPriceAndRating}>
+                        <p>${book.price}</p>
+                        <p>{book.stars}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     );
 };
 
