@@ -12,13 +12,7 @@ const SelectedBook: FC<SelectedBookProps> = ({book}) => {
 
     const [menuActive, setMenuActive] = useState(false);
 
-    const burgerMenuActive = () => setMenuActive(!menuActive)
-
-    const handleClickAway: MouseEventHandler = (event) => {
-        if (event.target === event.currentTarget) {
-            burgerMenuActive()
-        }
-    }
+    const MoreDetailsMenuActive = () => setMenuActive(!menuActive)
 
     return (
         <section className={styles.bookConteiner}>
@@ -31,17 +25,24 @@ const SelectedBook: FC<SelectedBookProps> = ({book}) => {
                 </div>
                 <div className={styles.bookConteinerTopRight}>
                     <div className={styles.bookConteinerTopRightPriceAndRating}>
-                        <p>{book.price}</p>
-                        <p>{book.stars}</p>
+                        <p>
+                            {book.price}
+                        </p>
+                        <p>
+                            {book.stars}
+                        </p>
                     </div>
                     <div className={styles.bookConteinerTopRightDetails}>
-                        <p>{book.author}</p>
-                        <MoreDetailsBtn onClick={burgerMenuActive}/>
+                        <p>
+                            {book.author}
+                        </p>
+                        <MoreDetailsBtn 
+                            onClick={MoreDetailsMenuActive}
+                        />
                         <MoreDetailsMenu 
-                            author={book.author}
+                            author={!!book.author ? book.author : "Unknown"}
                             menu={menuActive}
-                            onClick={handleClickAway}
-                            />
+                        />
                     </div>
                 </div>
             </div>

@@ -1,13 +1,13 @@
 import { applyMiddleware, combineReducers, createStore } from "redux";
 import thunk from "redux-thunk";
-import { movieReducer } from "./reducer/movieReducer";
+import { bookReducer } from "./reducer/bookReducer";
 // import { moviesReducer } from "./reducer/moviesReducer";
 // import userReducer from "./reducer/userReducer";
 
 const rootReducer = combineReducers({
+    bookCard: bookReducer,
     // movieCards: moviesReducer,
     // favorites: moviesReducer,
-    movieCard: movieReducer,
     // user: userReducer,
 });
 

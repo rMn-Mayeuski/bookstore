@@ -1,11 +1,11 @@
 import {responseToJSONHandler} from "../../utils/responseUtil";
-import { setMovieAction } from "../reducer/movieReducer";
+import { setBookAction } from "../reducer/bookReducer";
 
-export const getMovieCard = (id: number):any => {
+export const getBookCard = (id: number):any => {
     return (dispatch: any) => {
         fetch(`http://localhost:3001/book/${id}`)
             .then(responseToJSONHandler)
-            .then(res => dispatch(setMovieAction(res)))
+            .then(res => dispatch(setBookAction(res)))
             .catch(console.error)
     }
 }

@@ -3,7 +3,7 @@ import { PageProps } from '../../components/AppRoutes/Routes';
 import BookList, { IBook } from '../../components/common/BookList/BookList';
 import Subscription from '../../components/common/Subscription/Subscription';
 import Title from '../../components/common/Title/Title';
-import BookService from '../../services/movieService';
+import BookService from '../../services/BookService';
 
 const MainPage: FC<PageProps> = ({title}) => {
 

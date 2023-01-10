@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { IBook } from '../../components/common/BookList/BookList';
 import SelectedBook from '../../components/common/SelectedBook/SelectedBook';
-import { getMovieCard } from '../../store/asyncActions/movieActions';
-import { setMovieAction } from '../../store/reducer/movieReducer';
+import { getBookCard } from '../../store/asyncActions/bookActions';
+import { setBookAction } from '../../store/reducer/bookReducer';
 
 const BookPage: FC = () => {
 
@@ -12,19 +12,19 @@ const BookPage: FC = () => {
     const {id = 1} = useParams();
     const [book, setBook] = useState<IBook | null>(null);
 
-    const { movieCard } = useSelector((state: any) => state.movieCard)
+    const { bookCard } = useSelector((state: any) => state.bookCard)
 
-    const getMovie = async () => {
-        await dispatch(getMovieCard(+id))
+    const getBook = async () => {
+        await dispatch(getBookCard(+id))
     }
 
     useEffect(() => {
-        dispatch(setMovieAction(null))
-        getMovie()
+        dispatch(setBookAction(null))
+        getBook()
     }, [id])
 
     useEffect(() => {
-        setBook(movieCard)
+        setBook(bookCard)
     })
     
     return (
