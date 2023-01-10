@@ -1,0 +1,10 @@
+.menu{
+    &Hide{
+        display: none;
+
+    }
+    &Active{
+        display: block;
+        background-color: red;
+    }
+}

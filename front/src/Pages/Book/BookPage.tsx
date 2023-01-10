@@ -26,7 +26,7 @@ const BookPage: FC = () => {
     useEffect(() => {
         setBook(movieCard)
     })
-
+    
     return (
         <>
         {!!book ?

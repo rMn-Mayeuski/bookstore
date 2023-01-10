@@ -7,7 +7,6 @@ import styles from "./Book.module.scss"
 interface IBookProps {
     book: IBook
     index?: number
-    onClick?: () => void
 }
 
 const Book: FC<IBookProps> = ({book}) => {
