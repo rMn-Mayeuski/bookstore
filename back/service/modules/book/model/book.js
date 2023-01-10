@@ -8,6 +8,9 @@ const bookSchema = new Schema({
     author: String,
     price: String,
     stars: Number,
-    describ: String
+    describ: String,
+    year: Number,
+    publishe: String,
+    pages: Number,
 });
 module.exports = mongoose.model('Book', bookSchema);
