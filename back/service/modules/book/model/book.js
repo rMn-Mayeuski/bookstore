@@ -6,11 +6,13 @@ const bookSchema = new Schema({
     bookName: String,
     bookImg: String,
     author: String,
-    price: String,
     stars: Number,
     describ: String,
     year: Number,
     publishe: String,
     pages: Number,
+    price: String,
+    language: String,
+    format: String
 });
 module.exports = mongoose.model('Book', bookSchema);
