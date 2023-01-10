@@ -5,6 +5,10 @@
         display: flex;
         justify-content: center;
         background-color: #F4EEFD;
+        & img{
+            height: 264px;
+            width: 226px;
+        }
     }
     &Text{
         & h2{

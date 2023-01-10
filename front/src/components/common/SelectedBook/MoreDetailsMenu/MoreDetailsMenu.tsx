@@ -1,18 +1,17 @@
-import React from 'react';
+import React, { FC, MouseEventHandler } from 'react';
 import styles from "./MoreDetailsMenu.module.scss"
 
 interface IMoreDetailsMenu {
     menu: boolean
-    onClick: any 
-    author: any
+    author: string 
 }
 
-const MoreDetailsMenu: React.FC<IMoreDetailsMenu> = ({author, menu = false, onClick}) => {
+const MoreDetailsMenu: FC<IMoreDetailsMenu> = ({author, menu = false}) => {
 
     const handlerStylesDetailsMenu = menu ? styles.menuActive : styles.menuHide;
 
     return (
-        <div className={handlerStylesDetailsMenu} onClick={onClick}>
+        <div className={handlerStylesDetailsMenu}>
             <p>{author}</p>
         </div>
     );

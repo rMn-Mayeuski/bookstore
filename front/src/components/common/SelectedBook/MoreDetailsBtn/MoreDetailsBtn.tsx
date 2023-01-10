@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 
 interface IMoreDetailsBtn {
-    onClick: any
+    onClick: MouseEventHandler
 }
 
 const MoreDetailsBtn: React.FC<IMoreDetailsBtn> = ({onClick}) => {
