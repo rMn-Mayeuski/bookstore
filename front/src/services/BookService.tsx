@@ -8,11 +8,14 @@ export interface IBookAPIResponse {
     page?: number
     pages?: number
     total?: number
+    dataInfo: {
+        countPage: []
+    }
 }
 
 export default class BookService {
-    static async getBooks(): Promise<IBookAPIResponse> {
-        return await HTTPService.get(`http://localhost:3001/book/test`)
+    static async getBooks(page: number): Promise<IBookAPIResponse> {
+        return await HTTPService.get(`http://localhost:3001/book?page=${page}&limit=5`)
             .then(responseToJSONHandler)
             .catch(console.error)
     }

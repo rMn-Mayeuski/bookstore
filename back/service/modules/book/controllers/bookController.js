@@ -14,10 +14,15 @@ exports.getBooksPagination = async function async (request, response){
     const startIndex = (page - 1) * limit;
     const endIndex = page * limit; 
     const result = {};
+    const countPage = [];
+    while ((Math.ceil((await Book.countDocuments().exec())/limit)) > countPage.length){
+        countPage.push(countPage.length+1)
+    }
     
     result.dataInfo = {
         allPost: (await Book.countDocuments().exec()),
-        allPages: Math.ceil((await Book.countDocuments().exec())/limit),
+        allPages: [Math.ceil((await Book.countDocuments().exec())/limit)],
+        countPage
     }
     if (endIndex < (await Book.countDocuments().exec())){
             result.next = {
