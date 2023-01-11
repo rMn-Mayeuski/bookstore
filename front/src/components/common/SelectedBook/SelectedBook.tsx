@@ -59,6 +59,7 @@ const SelectedBook: FC<SelectedBookProps> = ({book}) => {
                         </div>
                         <MoreDetailsBtn 
                             onClick={MoreDetailsMenuActive}
+                            menu={menuActive}
                         />
                         <MoreDetailsMenu 
                             format={!!book.format ? book.format : "Unknown"}

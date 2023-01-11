@@ -39,6 +39,9 @@
                 }
             }
             &Details{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
                 &Block{
                     display: flex;
                     justify-content: space-between;
