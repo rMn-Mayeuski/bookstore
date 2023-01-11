@@ -8,6 +8,11 @@ export interface IBook{
     bookImg?: string
     author?: string
     price?: string
+    publisher?: string
+    year?: string
+    pages?: string
+    language?: string
+    format?: string
     stars?: number
 }
 

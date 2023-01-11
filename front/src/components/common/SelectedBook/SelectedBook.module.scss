@@ -38,6 +38,28 @@
                     color: #313037;
                 }
             }
+            &Details{
+                &Block{
+                    display: flex;
+                    justify-content: space-between;
+                    &Text{
+                        font-family: 'Raleway', sans-serif;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 32px;
+                        color: #A8A8A8;
+                        &Main{
+                            font-family: 'Raleway', sans-serif;
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 16px;
+                            line-height: 32px;
+                            color: #313037;
+                        }
+                    }
+                }
+            }
         }
     }
 }
