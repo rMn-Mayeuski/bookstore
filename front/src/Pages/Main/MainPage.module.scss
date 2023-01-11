@@ -1,0 +1,19 @@
+.pagination{
+    margin: 50px 0px 70px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    & button{
+        cursor: pointer;
+        border: none;
+        background: none;
+        font-family: 'Raleway', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        text-transform: uppercase;
+        color: #313037;
+    }
+}

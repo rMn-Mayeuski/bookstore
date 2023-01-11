@@ -1,10 +1,11 @@
 import React, { FC, useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { PageProps } from '../../components/AppRoutes/Routes';
 import BookList, { IBook } from '../../components/common/BookList/BookList';
 import Subscription from '../../components/common/Subscription/Subscription';
 import Title from '../../components/common/Title/Title';
 import BookService from '../../services/BookService';
+import styles from "./MainPage.module.scss"
 
 const MainPage: FC<PageProps> = ({title}) => {
 
@@ -39,10 +40,10 @@ const MainPage: FC<PageProps> = ({title}) => {
         <>
             <Title title={title}/>
             <BookList books={books}/>
-            <Subscription/>
-            <div>
+            <div className={styles.pagination}>
                 {pages?.map(i => { return <button onClick={pageHandler} id={i} key={i}>{i}</button>})}
             </div>
+            <Subscription/>
         </>
     );
 };
