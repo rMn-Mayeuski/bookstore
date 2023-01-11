@@ -1,0 +1,14 @@
+.button{
+    border: none;
+    cursor: pointer;
+    background: none;
+    max-width: 150px;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.arrow{
+    transform: rotate(180deg);
+}
