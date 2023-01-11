@@ -8,9 +8,9 @@ const bookSchema = new Schema({
     author: String,
     stars: Number,
     describ: String,
-    year: Number,
+    year: String,
     publishe: String,
-    pages: Number,
+    pages: String,
     price: String,
     language: String,
     format: String

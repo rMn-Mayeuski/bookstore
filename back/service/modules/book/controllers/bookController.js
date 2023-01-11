@@ -8,37 +8,46 @@ exports.getBooks = function(request, response){
     });
 };
 
-exports.getBooksPagination = function (request, response){
+exports.getBooksPagination = async function async (request, response){
     const page = parseInt(request.query.page);
     const limit = parseInt(request.query.limit);
     const startIndex = (page - 1) * limit;
     const endIndex = page * limit; 
+    const result = {};
     
     
-    
-    Book.find({},{_id:0, __v:0}, function(error, data){
-        if (error) return error;
+    // Book.find({},{_id:0, __v:0}, function(error, data){
+    //     if (error) return error;
         
-        const result = {}; 
-        result.allPosts = data.length 
-        result.allPages = Math.ceil(data.length/limit)
+    //     const result = {}; 
+    //     result.allPosts = data.length 
+    //     result.allPages = Math.ceil(data.length/limit)
         
-        if(endIndex < data.length){
+    //     if(endIndex < data.length){
+    //         result.next = {
+    //             page: page +1,
+    //             limit: limit,
+    //         };
+    //     }
+    //     if(startIndex > 0){
+    //         result.previous = {
+    //             page: page - 1,
+    //             limit: limit,
+    //         }
+    //     }
+    //     result.results = data.slice(startIndex, endIndex)
+
+    //     response.send(result);
+    // });
+    if (endIndex < (await Book.countDocuments().exec())){
             result.next = {
                 page: page +1,
                 limit: limit,
             };
         }
-        if(startIndex > 0){
-            result.previous = {
-                page: page - 1,
-                limit: limit,
-            }
-        }
-        result.results = data.slice(startIndex, endIndex)
-
-        response.send(result);
-    });
+    if (startIndex > 0) {
+        
+    }
 }
 
 exports.getBookById = async function(request, response){

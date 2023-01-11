@@ -1,0 +1,3 @@
+db.books.find().forEach((item) => {
+  db.books.update({_id: item._id}, {$set: {format:'Paper book'}})
+})
