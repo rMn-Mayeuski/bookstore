@@ -11,10 +11,11 @@ const MainPage: FC<PageProps> = ({title}) => {
 
     const [books, setBooks] = useState<IBook[]>([]);
     const [pages, setPages] = useState<[]>()
+    const [totalPages, setTotalPages] = useState<number>()
     const [currentPage, setCurrentPage] = useState<number>(1)
-    const navigate = useNavigate()
 
     console.log(currentPage);
+    console.log(totalPages);
     
     const pageHandler = (e:any) => {
         setCurrentPage(e.target.id)
@@ -27,7 +28,7 @@ const MainPage: FC<PageProps> = ({title}) => {
         //@ts-ignore
         setBooks(docs.results)
         setPages(docs.dataInfo.countPage)
-        setCurrentPage(currentPage)
+        setTotalPages(docs.dataInfo.allPages)
 
         console.log(docs);
     }
@@ -41,7 +42,7 @@ const MainPage: FC<PageProps> = ({title}) => {
             <Title title={title}/>
             <BookList books={books}/>
             <div className={styles.pagination}>
-                {pages?.map(i => { return <button onClick={pageHandler} id={i} key={i}>{i}</button>})}
+                {pages?.map(i => { return <button onClick={pageHandler} id={i} key={i}>{i}</button> })}
             </div>
             <Subscription/>
         </>
