@@ -1,4 +1,4 @@
-.page-link {
+.paginationButton {
   position: relative;
   display: inline-flex;
   border: 1px solid #dee2e6;
@@ -13,38 +13,38 @@
   cursor: pointer;
 }
 
-.page-link:first-child {
+.paginationButton:first-child {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
 
-.page-link:last-child {
+.paginationButton:last-child {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
 
-.page-link:not(:first-child) {
+.paginationButton:not(:first-child) {
   margin-left: -1px;
 }
 
-.page-link:hover,
-.page-link:focus {
+.paginationButton:hover,
+.paginationButton:focus {
   color: #0a58ca;
   background-color: #e9ecef;
 }
 
-.page-link:focus {
+.paginationButton:focus {
   z-index: 3;
 }
 
-.page-link.active {
+.paginationButton.active {
   z-index: 2;
   color: #ffffff;
   border-color: #0d6efd;
   background-color: #0d6efd;
 }
 
-.page-link.disabled {
+.paginationButton.disabled {
   color: #6c757d;
   pointer-events: none;
 }

@@ -14,9 +14,6 @@ const MainPage: FC<PageProps> = ({title}) => {
     const [totalPages, setTotalPages] = useState<number>(1)
     const [currentPage, setCurrentPage] = useState<number>(1)
 
-    console.log(currentPage);
-    console.log(totalPages);
-    
     const pageHandler = (e:any) => {
         setCurrentPage(e.target.id)
     }
@@ -41,9 +38,9 @@ const MainPage: FC<PageProps> = ({title}) => {
         <>
             <Title title={title}/>
             <BookList books={books}/>
-            <div className={styles.pagination}>
+            {/* <div className={styles.pagination}>
                 {pages?.map(i => { return <button onClick={pageHandler} id={i} key={i}>{i}</button> })}
-            </div>
+            </div> */}
             <Pagination 
                 currentPage={currentPage}
                 lastPage={totalPages}
