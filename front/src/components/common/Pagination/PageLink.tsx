@@ -1,10 +1,9 @@
 import { HTMLProps } from 'react';
-import './PageLink.css';
+import styles from "./PageLink.module.scss"
 
 export type Props = HTMLProps<HTMLAnchorElement> & { active?: boolean };
 
 export default function PageLink({
-  className,
   active,
   disabled,
   children,
@@ -12,13 +11,12 @@ export default function PageLink({
 }: Props) {;
 
   if (disabled) {
-    return <span >{children}</span>;
+    return <span className={styles.paginationButtonDisabled}>{children}</span>;
   }
 
   return (
     <a
-      
-      aria-current={active ? 'page' : undefined}
+      className={active ? styles.paginationButtonActive : styles.paginationButton}
       {...otherProps}
     >
       {children}

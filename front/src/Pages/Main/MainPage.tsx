@@ -9,28 +9,29 @@ import styles from "./MainPage.module.scss"
 
 const MainPage: FC<PageProps> = ({title}) => {
 
+    const [isLoading, setIsLoading] = useState<boolean>()
+
     const [books, setBooks] = useState<IBook[]>([]);
     const [pages, setPages] = useState<[]>()
     const [totalPages, setTotalPages] = useState<number>(1)
     const [currentPage, setCurrentPage] = useState<number>(1)
 
-    console.log(currentPage);
-    console.log(totalPages);
-    
     const pageHandler = (e:any) => {
         setCurrentPage(e.target.id)
     }
 
     const getBooks = async () => {
-
+        setIsLoading(true)
+        
         const docs  = await BookService.getBooks(currentPage);
 
-        //@ts-ignore
         setBooks(docs.results)
         setPages(docs.dataInfo.countPage)
-        setTotalPages(docs.dataInfo.allPages)
+        setTotalPages(docs.dataInfo.allPages[0])
 
         console.log(docs);
+
+        setIsLoading(false)
     }
 
     useEffect(() => {
@@ -40,17 +41,21 @@ const MainPage: FC<PageProps> = ({title}) => {
     return (
         <>
             <Title title={title}/>
+            {!!isLoading ? "Loading" 
+                : 
             <BookList books={books}/>
-            <div className={styles.pagination}>
-                {pages?.map(i => { return <button onClick={pageHandler} id={i} key={i}>{i}</button> })}
-            </div>
+            }
             <Pagination 
                 currentPage={currentPage}
                 lastPage={totalPages}
                 maxLength={7}
                 setCurrentPage={setCurrentPage}
-            />
+                />
             <Subscription/>
+
+                {/* <div className={styles.pagination}>
+                    {pages?.map(i => { return <button onClick={pageHandler} id={i} key={i}>{i}</button> })}
+                </div> */}
         </>
     );
 };

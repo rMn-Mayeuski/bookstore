@@ -1,6 +1,6 @@
 import { getPaginationItems } from './lib/pagination';
 import PageLink from './PageLink';
-import './Pagination.css';
+import styles from "./Pagination.module.scss"
 
 export type Props = {
   currentPage: number;
@@ -18,7 +18,7 @@ export default function Pagination({
   const pageNums = getPaginationItems(currentPage, lastPage, maxLength);
 
   return (
-    <nav className="pagination" aria-label="Pagination">
+    <nav className={styles.pagination}>
       <PageLink
         disabled={currentPage === 1}
         onClick={() => setCurrentPage(currentPage - 1)}
