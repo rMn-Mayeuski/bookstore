@@ -4,7 +4,6 @@ import styles from "./PageLink.module.scss"
 export type Props = HTMLProps<HTMLAnchorElement> & { active?: boolean };
 
 export default function PageLink({
-  className,
   active,
   disabled,
   children,
@@ -12,13 +11,12 @@ export default function PageLink({
 }: Props) {;
 
   if (disabled) {
-    return <span className={styles.paginationButton}>{children}</span>;
+    return <span className={styles.paginationButtonDisabled}>{children}</span>;
   }
 
   return (
     <a
-      className={styles.paginationButton}
-      aria-current={active ? 'page' : undefined}
+      className={active ? styles.paginationButtonActive : styles.paginationButton}
       {...otherProps}
     >
       {children}

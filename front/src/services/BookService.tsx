@@ -3,20 +3,22 @@ import {responseToJSONHandler} from "../utils/responseUtil";
 import { IBook } from "../components/common/BookList/BookList";
 
 export interface IBookAPIResponse {
-    docs: IBook[]
+    results: IBook[]
     limit?: number
     page?: number
     pages?: number
     total?: number
     dataInfo: {
         countPage: []
-        allPages: number
+        allPages: {
+            0 : number
+        }
     }
 }
 
 export default class BookService {
     static async getBooks(page: number): Promise<IBookAPIResponse> {
-        return await HTTPService.get(`http://localhost:3001/book?page=${page}&limit=1`)
+        return await HTTPService.get(`http://localhost:3001/book?page=${page}&limit=2`)
             .then(responseToJSONHandler)
             .catch(console.error)
     }
