@@ -17,6 +17,7 @@ export interface IBookAPIResponse {
 }
 
 export default class BookService {
+
     static async getBooks(page: number): Promise<IBookAPIResponse> {
         return await HTTPService.get(`http://localhost:3001/book?page=${page}&limit=2`)
             .then(responseToJSONHandler)
