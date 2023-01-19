@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import AppRouter from '../AppRoutes/AppRoutes';
-import Book from '../common/Book/Book';
 import MainWrapper from '../common/MainWrapper/MainWrapper';
+import "./App.scss";
 
 const App: FC = () => {
   

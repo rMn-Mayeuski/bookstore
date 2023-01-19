@@ -33,14 +33,38 @@ const SelectedBook: FC<SelectedBookProps> = ({book}) => {
                         </p>
                     </div>
                     <div className={styles.bookConteinerTopRightDetails}>
-                        <p>
-                            {book.author}
-                        </p>
+                        <div className={styles.bookConteinerTopRightDetailsBlock}>
+                            <p className={styles.bookConteinerTopRightDetailsBlockText}>
+                                Authors
+                            </p>
+                            <p className={styles.bookConteinerTopRightDetailsBlockTextMain}>
+                                {book.author}
+                            </p>
+                        </div>
+                        <div className={styles.bookConteinerTopRightDetailsBlock}>
+                            <p className={styles.bookConteinerTopRightDetailsBlockText}>
+                                Publisher
+                            </p>
+                            <p className={styles.bookConteinerTopRightDetailsBlockTextMain}>
+                                {book.publisher}
+                            </p>
+                        </div>
+                        <div className={styles.bookConteinerTopRightDetailsBlock}>
+                            <p className={styles.bookConteinerTopRightDetailsBlockText}>
+                                Language
+                            </p>
+                            <p className={styles.bookConteinerTopRightDetailsBlockTextMain}>
+                                {book.language}
+                            </p>
+                        </div>
                         <MoreDetailsBtn 
                             onClick={MoreDetailsMenuActive}
+                            menu={menuActive}
                         />
                         <MoreDetailsMenu 
-                            author={!!book.author ? book.author : "Unknown"}
+                            format={!!book.format ? book.format : "Unknown"}
+                            pages={!!book.pages ? book.pages : "Unknown"}
+                            year={!!book.year ? book.year : "Unknown"}
                             menu={menuActive}
                         />
                     </div>
