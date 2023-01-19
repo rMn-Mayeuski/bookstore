@@ -12,6 +12,7 @@ const MainPage: FC<PageProps> = ({title}) => {
     const [isLoading, setIsLoading] = useState<boolean>()
 
     const [books, setBooks] = useState<IBook[]>([]);
+
     const [pages, setPages] = useState<[]>()
     const [totalPages, setTotalPages] = useState<number>(1)
     const [currentPage, setCurrentPage] = useState<number>(1)
@@ -52,6 +53,7 @@ const MainPage: FC<PageProps> = ({title}) => {
                 setCurrentPage={setCurrentPage}
                 />
             <Subscription/>
+
 
                 {/* <div className={styles.pagination}>
                     {pages?.map(i => { return <button onClick={pageHandler} id={i} key={i}>{i}</button> })}
