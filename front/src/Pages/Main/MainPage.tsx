@@ -8,13 +8,15 @@ import BookService from '../../services/BookService';
 const MainPage: FC<PageProps> = ({title}) => {
 
     const [books, setBooks] = useState<IBook[]>([]);
+   
 
     const getBooks = async () => {
 
         const docs  = await BookService.getBooks();
 
+        // setPages(docs.dataInfo)
         //@ts-ignore
-        setBooks(docs)
+        setBooks(docs.results)
 
         console.log(docs);
     }
@@ -28,6 +30,9 @@ const MainPage: FC<PageProps> = ({title}) => {
             <Title title={title}/>
             <BookList books={books}/>
             <Subscription/>
+            <div>
+                
+            </div>
         </>
     );
 };
