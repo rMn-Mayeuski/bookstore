@@ -21,7 +21,7 @@ exports.getBooksPagination = async function async (request, response){
     
     result.dataInfo = {
         allPost: (await Book.countDocuments().exec()),
-        allPages: [Math.ceil((await Book.countDocuments().exec())/limit)],
+        allPages: Math.ceil((await Book.countDocuments().exec())/limit),
         countPage
     }
     if (endIndex < (await Book.countDocuments().exec())){

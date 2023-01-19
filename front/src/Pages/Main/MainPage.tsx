@@ -27,7 +27,7 @@ const MainPage: FC<PageProps> = ({title}) => {
 
         setBooks(docs.results)
         setPages(docs.dataInfo.countPage)
-        setTotalPages(docs.dataInfo.allPages[0])
+        setTotalPages(docs.dataInfo.allPages)
 
         console.log(docs);
 
